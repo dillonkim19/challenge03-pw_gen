@@ -27,11 +27,14 @@ const askCriteria = function() {
 
   var criteria = [];
   
+  var selectedCriteria = "You have selected the following:"
+
   // Ask if user wants upper case letters
   if (confirm("Would you like to have upper case letters?")) {
     console.log("YES UPPER CASE!!!!");
     criteria.push(upCase);
     console.log(criteria);
+    selectedCriteria = selectedCriteria.concat(" upper case letters");
   }
 
   // Ask if user wants lower case letters
@@ -39,6 +42,7 @@ const askCriteria = function() {
     console.log("YES LOWER CASE!!!!");
     criteria.push(lowCase);
     console.log(criteria);
+    selectedCriteria = selectedCriteria.concat(" lower case letters");
   }
 
   // Ask if user wants numbers
@@ -46,6 +50,7 @@ const askCriteria = function() {
     console.log("YES NUMBERS!!!!");
     criteria.push(numbers);
     console.log(criteria);
+    selectedCriteria = selectedCriteria.concat(" numbers");
   }
 
   // Ask if user wants special characters
@@ -53,7 +58,17 @@ const askCriteria = function() {
     console.log("YES SPECIAL CHARACTERS!!!!");
     criteria.push(special);
     console.log(criteria);
+    selectedCriteria = selectedCriteria.concat(" special characters");
   }
+
+  // Alert if user does not say yes to at least one character type
+  if (criteria.length < 1) {
+    alert("You should have at least one character type!");
+    criteria = askCriteria();
+  }
+
+  // Alert which criteria was selected
+  alert(selectedCriteria);
 
   return criteria;
 
@@ -69,8 +84,6 @@ var generatePassword = function() {
   // Ask for password criteria
   var criteria = askCriteria();
   console.log(criteria);
-
-  console.log(criteria[3][3]);
 
   // Create random password
   var password = '';
@@ -92,6 +105,7 @@ var generatePassword = function() {
 
   }
 
+  return password;
 
 }
 
