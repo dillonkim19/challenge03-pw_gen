@@ -21,7 +21,7 @@ DEPLOYED LINKS
 --------------
 
 #### Dillon Kim Portfolio
-* https://dillonkim19.github.io/challenge02
+* https://dillonkim19.github.io/challenge03/
 
 #### Github
-* https://github.com/dillonkim19/challenge02
+* https://github.com/dillonkim19/challenge03
