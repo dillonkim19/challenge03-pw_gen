@@ -17,9 +17,9 @@ const askHowLong = function() {
   
   let passLength = prompt("How many characters would you like your password to be? (8 - 128)", "12");
 
-  if (passLength < 8 || passLength > 128) passLength = askHowLong();
+  if (passLength < 8 || passLength > 128) return askHowLong();
 
-  return passLength
+  return passLength;
 }
 
 // Function that asks for criteria of password
@@ -64,7 +64,7 @@ const askCriteria = function() {
   // Alert if user does not say yes to at least one character type
   if (criteria.length < 1) {
     alert("You should have at least one character type!");
-    criteria = askCriteria();
+    return askCriteria();
   }
 
   // Alert which criteria was selected
